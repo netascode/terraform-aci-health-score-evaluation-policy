@@ -3,7 +3,7 @@
 
 # Terraform ACI Health Score Policy
 
-Description
+Enables/disables the Ignore Acknowledged Faults attribute in the default health score evaluation policy.
 
 Location in GUI:
 `Fabric` » `Fabric Policies` » `Policies` » `Monitoring` » `Common Policy` » `Health Score Evaluation Policies` » `Health Score Evaluation Policy`
