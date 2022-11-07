@@ -1,9 +1,9 @@
-resource "aci_rest_managed" "fvTenant" {
-  dn         = "uni/tn-${var.name}"
-  class_name = "fvTenant"
+resource "aci_rest_managed" "healthEvalP" {
+  dn         = "uni/fabric/hsPols/hseval"
+  class_name = "healthEvalP"
   content = {
-    name      = var.name
-    nameAlias = var.alias
-    descr     = var.description
+    name  = "default"
+    descr = "Default Health Score Evaluation Policy from IFC"
+    ignoreAckedFaults = var.ignoreAckedFaults
   }
 }

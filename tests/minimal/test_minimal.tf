@@ -16,33 +16,33 @@ terraform {
 module "main" {
   source = "../.."
 
-  name = "ABC"
+  ignoreAckedFaults = true
 }
 
-data "aci_rest_managed" "fvTenant" {
-  dn = "uni/tn-ABC"
+data "aci_rest_managed" "healthEvalP" {
+  dn = "uni/fabric/hsPols/hseval"
 
   depends_on = [module.main]
 }
 
-resource "test_assertions" "fvTenant" {
-  component = "fvTenant"
+resource "test_assertions" "healthEvalP" {
+  component = "healthEvalP"
 
   equal "name" {
-    description = "name"
-    got         = data.aci_rest_managed.fvTenant.content.name
-    want        = "ABC"
-  }
-
-  equal "nameAlias" {
-    description = "nameAlias"
-    got         = data.aci_rest_managed.fvTenant.content.nameAlias
-    want        = ""
+    description = "Health score policy name."
+    got         = data.aci_rest_managed.healthEvalP.content.name
+    want        = "default"
   }
 
   equal "descr" {
-    description = "descr"
-    got         = data.aci_rest_managed.fvTenant.content.descr
-    want        = ""
+    description = "Health score policy description."
+    got         = data.aci_rest_managed.healthEvalP.content.descr
+    want        = "Default Health Score Evaluation Policy from IFC"
+  }
+
+  equal "ignoreAckedFaults" {
+    description = "Ignore Acknowledged Faults"
+    got         = data.aci_rest_managed.healthEvalP.content.ignoreAckedFaults
+    want        = "yes"
   }
 }

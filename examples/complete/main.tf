@@ -1,8 +1,9 @@
-module "aci_scaffolding" {
-  source  = "netascode/scaffolding/aci"
-  version = ">= 0.0.1"
-
-  name        = "ABC"
-  alias       = "ABC-ALIAS"
-  description = "My Description"
+resource "aci_rest_managed" "healthEvalP" {
+  dn         = "uni/fabric/hsPols/hseval"
+  class_name = "healthEvalP"
+  content = {
+    name  = "default"
+    descr = "Default Health Score Evaluation Policy from IFC"
+    ignoreAckedFaults = var.ignoreAckedFaults
+  }
 }
