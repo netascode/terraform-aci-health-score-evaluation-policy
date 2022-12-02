@@ -15,7 +15,7 @@ module "aci_health_score_policy" {
   source = "netascode/aci_health_score_policy"
   version = ">= 0.0.1"
 
-  ignoreAckedFaults = true
+  ignore_acked_faults = true
 }
 ```
 
@@ -36,7 +36,7 @@ module "aci_health_score_policy" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ignoreAckedFaults"></a> [ignoreAckedFaults](#input\_name) | Ignore Acknowledged Faults | `bool` | false | yes |
+| <a name="input_ignore_acked_faults"></a> [ignore_acked_faults](#input\_name) | Ignore Acknowledged Faults | `bool` | false | yes |
 
 ## Outputs
 

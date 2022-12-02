@@ -16,7 +16,7 @@ terraform {
 module "main" {
   source = "../.."
 
-  ignoreAckedFaults = true
+  ignore_acked_faults = true
 }
 
 data "aci_rest_managed" "healthEvalP" {
@@ -40,9 +40,9 @@ resource "test_assertions" "healthEvalP" {
     want        = "Default Health Score Evaluation Policy from IFC"
   }
 
-  equal "ignoreAckedFaults" {
+  equal "ignore_acked_faults" {
     description = "Ignore Acknowledged Faults"
-    got         = data.aci_rest_managed.healthEvalP.content.ignoreAckedFaults
+    got         = data.aci_rest_managed.healthEvalP.content.ignore_acked_faults
     want        = "yes"
   }
 }

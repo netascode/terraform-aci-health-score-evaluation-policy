@@ -4,6 +4,6 @@ resource "aci_rest_managed" "healthEvalP" {
   content = {
     name  = "default"
     descr = "Default Health Score Evaluation Policy from IFC"
-    ignoreAckedFaults = var.ignoreAckedFaults
+    ignoreAckedFaults = var.ignore_acked_faults
   }
 }
