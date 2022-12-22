@@ -3,11 +3,11 @@ version: '>= 0.14.0'
 formatter: markdown table
 
 content: |-
-  [![Tests](https://github.com/netascode/terraform-aci-health-score-policy/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-aci-health-score-policy/actions/workflows/test.yml)
+  [![Tests](https://github.com/netascode/terraform-aci-health-score-evaluation-policy/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-aci-health-score-evaluation-policy/actions/workflows/test.yml)
 
-  # Terraform ACI Health Score Policy Module
+  # Terraform ACI Health Score Evaluation Policy Module
 
-  Description
+  Manages ACI Health Score Evaluation Policy
 
   Location in GUI:
   `Fabric` » `Fabric Policies` » `Policies` » `Monitoring` » `Common Policy` » `Health Score Evaluation Policies` » `Health Score Evaluation Policy`

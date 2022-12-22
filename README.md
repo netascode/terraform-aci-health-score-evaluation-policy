@@ -1,9 +1,9 @@
 <!-- BEGIN_TF_DOCS -->
-[![Tests](https://github.com/netascode/terraform-aci-health-score-policy/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-aci-health-score-policy/actions/workflows/test.yml)
+[![Tests](https://github.com/netascode/terraform-aci-health-score-evaluation-policy/actions/workflows/test.yml/badge.svg)](https://github.com/netascode/terraform-aci-health-score-evaluation-policy/actions/workflows/test.yml)
 
-# Terraform ACI Health Score Policy
+# Terraform ACI Health Score Evaluation Policy Module
 
-Enables/disables the Ignore Acknowledged Faults attribute in the default health score evaluation policy.
+Manages ACI Health Score Evaluation Policy
 
 Location in GUI:
 `Fabric` » `Fabric Policies` » `Policies` » `Monitoring` » `Common Policy` » `Health Score Evaluation Policies` » `Health Score Evaluation Policy`
@@ -11,9 +11,9 @@ Location in GUI:
 ## Examples
 
 ```hcl
-module "aci_health_score_policy" {
-  source = "netascode/aci_health_score_policy"
-  version = ">= 0.0.1"
+module "aci_health_score_evaluation_policy" {
+  source  = "netascode/health-score-evaluation-policy/aci"
+  version = ">= 0.1.0"
 
   ignore_acked_faults = true
 }
@@ -36,14 +36,13 @@ module "aci_health_score_policy" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_ignore_acked_faults"></a> [ignore_acked_faults](#input\_name) | Ignore Acknowledged Faults | `bool` | false | yes |
+| <a name="input_ignore_acked_faults"></a> [ignore\_acked\_faults](#input\_ignore\_acked\_faults) | Ignore acknowledged faults. | `bool` | `false` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_dn"></a> [dn](#output\_dn) | Distinguished name of `healthEvalP` object. |
-| <a name="output_name"></a> [name](#output\_name) | Health score policy name. |
 
 ## Resources
 

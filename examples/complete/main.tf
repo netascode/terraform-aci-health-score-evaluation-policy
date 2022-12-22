@@ -1,9 +1,6 @@
-resource "aci_rest_managed" "healthEvalP" {
-  dn         = "uni/fabric/hsPols/hseval"
-  class_name = "healthEvalP"
-  content = {
-    name  = "default"
-    descr = "Default Health Score Evaluation Policy from IFC"
-    ignoreAckedFaults = var.ignore_acked_faults
-  }
+module "aci_health_score_evaluation_policy" {
+  source  = "netascode/health-score-evaluation-policy/aci"
+  version = ">= 0.1.0"
+
+  ignore_acked_faults = true
 }
